@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        const str = prompt("Введіть довільну кількість числових значень, розділених комою");
+        let array = str.split(",");
+        console.log(array);
+        array = array.sort(function(a, b){return a - b});
+        console.log(array);
+        array.splice(2, 3);
+        console.log(array);
+    </script>
+</body>
+</html>
