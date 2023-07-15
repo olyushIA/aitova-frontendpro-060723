@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        //Отримати від користувача 3 рядки та вивести їх у довільному порядку однією командою (конкатенація)
+        const text1 = prompt("Please, enter first piece of text");
+        const text2 = prompt("Please, enter second piece of text");
+        const text3 = prompt("Please, enter third piece of text");
+        alert(text1.concat(" ", text2, " ", text3))
+        /* One more option, use a template string
+            alert(`${text1} ${text2} ${text3}`);
+            One more option, use array
+            alert([text1, text2, text3].join(" ")); */
+    </script>
+</body>
+</html>
