@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+
+        // initital version
+        /* const str = prompt("Введіть довільну кількість числових значень, розділених комою");
+        let array = str.split(",");
+        console.log(array);
+        array = array.sort(function(a, b){return a - b});
+        console.log(array);
+        array.splice(2, 3);
+        console.log(array); */
+
+        //improved
+        const length = +prompt("Введіть довжину масиву");
+        const res = [];
+        for (let i = 0; i < length; i++) {
+            res.push(+prompt(`Введіть число № ${i + 1}`));
+        }
+        const sorted = res.sort((a, b) => b - a);
+        sorted.splice(1, 3);
+        console.log(sorted);
+    </script>
+</body>
+</html>
