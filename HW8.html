@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3> 1. Вивести на сторінку в один рядок через кому числа від 10 до 20. </h3>
+<p id="1"></p>
+
+<h3> 2. Вивести квадрати чисел від 10 до 20. </h3>
+<p id="2"></p>
+
+<h3> 3. Вивести таблицю множення на 7. </h3>
+<p id="3"></p>
+
+<h3> 4. Знайти суму всіх цілих чисел від 1 до 15. </h3>
+<p id="4"></p>
+
+<h3> 5. Знайти добуток усіх цілих чисел від 15 до 35. </h3>
+<p id="5"></p>
+
+<h3> 6. Знайти середнє арифметичне всіх цілих чисел від 1 до 500. </h3>
+<p id="6"></p>
+
+<h3> 7. Вивести суму лише парних чисел в діапазоні від 30 до 80. </h3>
+<p id="7"></p>
+
+<h3> 8. Вивести всі числа в діапазоні від 100 до 200 кратні 3. </h3>
+<p id="8"></p>
+
+<h3> 9. Дано натуральне число (яке ви ввели). Знайти та вивести на сторінку всі його дільники. </h3>
+<p id="9"></p>
+
+<h3> 10. Визначити кількість його парних дільників. </h3>
+<p id="10"></p>
+
+<h3> 11. Знайти суму його парних дільників. </h3>
+<p id="11"></p>
+
+<h3> 12. Надрукувати повну таблицю множення від 1 до 10. </h3>
+<p id="12"></p>
+
+<script>
+    //Вивести на сторінку в один рядок через кому числа від 10 до 20.
+    /* моя версія { let text1 = " ";
+        let a = 10;
+        while (a < 21) {
+            if (a != 20) {
+                text1 += a + ", ";
+            } else {
+                text1 += a;
+            }
+            a++;
+        } 
+    } */
+    {   let a = 10;
+        const result1 = [];
+        while (a <= 20) {
+            result1.push(a);
+            a++;
+        }
+        document.getElementById("1").innerHTML = result1.join(", ");
+    }
+    
+    //Вивести квадрати чисел від 10 до 20.
+    /* моя версія {   let text2 = " ";
+        let b = 10;
+        while (b < 21) {
+            if (b != 20) {
+                text2 += Math.pow(b, 2) + ", ";
+            } else {
+                text2 += Math.pow(b, 2);
+            }
+            b++;
+        }
+    } */
+    {   let b = 10;
+        const result2 = [];
+        while (b <= 20) {
+            result2.push(Math.pow(b, 2));
+            b++;
+        }
+        document.getElementById("2").innerHTML = result2.join(", ");
+    }
+
+    //Вивести таблицю множення на 7.
+    /* моя версія {   let text3 = "";
+        let c = 1;
+        while (c <= 10) {
+            text3 += c + " * 7 = " + c*7 + "<br>";
+            c++;
+        }
+        document.getElementById("3").innerHTML = text3;
+    } */
+    // optimised
+    {   let c = 1;
+        const list = [];
+        while (c <= 10) {
+            list.push(`${c} * 7 = ${c * 7}`);
+            c++;
+            }
+        document.getElementById("3").innerHTML = list.join("<br />");
+    }
+
+    //Знайти суму всіх цілих чисел від 1 до 15.
+    {   let text4 = "";
+        let textA = "";
+        let sum = 0;
+        let d = 1;
+        do {
+            if (d != 15) {
+                textA += d + " + ";
+            } else {
+                textA += d;
+            }
+            sum = sum + d;
+            d++;
+        } while (d < 16);
+        text4 = textA + " = " + sum;
+        document.getElementById("4").innerHTML = text4;
+    }
+
+    //Знайти добуток усіх цілих чисел від 15 до 35.
+    {   let text5 = "";
+        let textB = "";
+        let mult = 1;
+        let e = 15;
+        do {
+            if (e != 35) {
+                textB += e + " * ";
+            } else {
+                textB += e;
+            }
+            mult = mult * e;
+            e++;
+        } while (e < 36);
+        text5 = textB + " = " + BigInt(mult);
+        document.getElementById("5").innerHTML = text5;
+    }
+
+    //Знайти середнє арифметичне всіх цілих чисел від 1 до 500.
+    {   let mean = 0;
+        let f = 1;
+        do {mean = mean + f;
+            f++;
+        } while (f < 501);
+        mean = mean / 500;
+        document.getElementById("6").innerHTML = mean;
+    }
+
+    //Вивести суму лише парних чисел в діапазоні від 30 до 80.
+    {   let evenSum = 0;
+        for (let g = 30; g < 81; g++) {
+            if (g % 2 == 0) {
+                evenSum = evenSum + g;
+                console.log(evenSum);
+            }
+        }
+        document.getElementById("7").innerHTML = evenSum;
+    }
+
+    //Вивести всі числа в діапазоні від 100 до 200 кратні 3.
+    {   let text8 = "";
+        for (let h = 100; h < 201; h++) {
+            if (h % 3 == 0) {
+                text8 += h + " ";
+            }
+        }
+        document.getElementById("8").innerHTML = text8;
+    }
+
+    //Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
+    {   let text9 = "";
+        const natNum = +prompt("Please, enter any natural number");
+        for (let i = 1; i < natNum; i++) {
+            if (natNum % i == 0) {
+                text9 += i + " ";
+            } 
+        }
+        document.getElementById("9").innerHTML = text9;
+    
+
+    //Визначити кількість його парних дільників.
+        let amount = 0;
+        for (let i = 1; i < natNum; i++) {
+            if ((natNum % i == 0) && (i % 2 == 0)) {
+                amount++ ;
+            }
+            
+        }
+        document.getElementById("10").innerHTML = amount;
+    
+
+    //Знайти суму його парних дільників.
+       let evenDivSum = 0;
+        for (let i = 1; i < natNum; i++) {
+            if ((natNum % i == 0) && (i % 2 == 0)) {
+                evenDivSum = evenDivSum + +i;
+            }
+        }
+        document.getElementById("11").innerHTML = evenDivSum;
+    }
+
+    //Надрукувати повну таблицю множення від 1 до 10.
+    /*
+        let text12 = "";
+        let k = 1;
+        while (k <= 10) {
+            for (let l = 1; l <= 10; l++) {
+            text12 += k + " * " + l + " = " + k*l + "<br>" 
+            }
+            k++;
+        }
+        document.getElementById("12").innerHTML = text12; 
+    */
+    {
+        let c = 1;
+        const list = [];
+        while (c <= 10) {
+            for (let l = 1; l <= 10; l++) {
+                list.push(`${l} * ${c} = ${l * c}`);
+            }
+            c++;
+            }
+            console.log(list);
+       document.getElementById("12").innerHTML = list.join("<br />");
+    }
+
+</script>
+</body>
+</html>
